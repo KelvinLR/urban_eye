@@ -6,9 +6,6 @@ class Place(
     val type: String,
     val latitude: Double,
     val longitude: Double,
-    val address: String,
-    val rating: Double,
-    val imageUrl: String
 ) {
 
 }
