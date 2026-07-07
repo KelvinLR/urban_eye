@@ -8,3 +8,12 @@ plugins {
     alias(libs.plugins.hilt) apply false
     alias(libs.plugins.detekt) apply false
 }
+
+subprojects {
+    plugins.withId("io.gitlab.arturbosch.detekt") {
+        extensions.configure<io.gitlab.arturbosch.detekt.extensions.DetektExtension> {
+            buildUponDefaultConfig = true
+            config.setFrom(rootProject.file("detekt.yml"))
+        }
+    }
+}

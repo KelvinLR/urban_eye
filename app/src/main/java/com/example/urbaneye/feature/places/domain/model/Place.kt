@@ -8,4 +8,7 @@ class Place(
     val longitude: Double,
 ) {
 
+    override fun toString(): String {
+        return super.toString()
+    }
 }

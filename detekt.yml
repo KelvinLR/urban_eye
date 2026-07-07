@@ -1,39 +1,105 @@
 build:
   maxIssues: 0
 
+config:
+  validation: true
+  warningsAsErrors: false
+
+processors:
+  active: true
+
+console-reports:
+  active: true
+
+output-reports:
+  active: true
+
 complexity:
+  active: true
+
   LongMethod:
+    active: true
     threshold: 30
+
   LongParameterList:
+    active: true
     functionThreshold: 8
     constructorThreshold: 10
+    ignoreDefaultParameters: true
+    ignoreDataClasses: true
+
   ComplexCondition:
+    active: true
     threshold: 4
+
   TooManyFunctions:
-    thresholdInFiles: 15
-    thresholdInClasses: 15
+    active: true
+    thresholdInFiles: 20
+    thresholdInClasses: 20
+    thresholdInInterfaces: 20
+    thresholdInObjects: 20
+    thresholdInEnums: 20
+
+empty-blocks:
+  active: true
+
+exceptions:
+  active: true
 
 naming:
+  active: true
+
   FunctionNaming:
+    active: true
     functionPattern: '[a-zA-Z][a-zA-Z0-9]*'
+
   TopLevelPropertyNaming:
+    active: true
     constantPattern: '[A-Z][A-Za-z0-9]*'
 
+  VariableNaming:
+    active: true
+    variablePattern: '[a-z][A-Za-z0-9]*'
+
+  ClassNaming:
+    active: true
+    classPattern: '[A-Z][A-Za-z0-9]*'
+
+performance:
+  active: true
+
+potential-bugs:
+  active: true
+
 style:
+  active: true
+
   MagicNumber:
     active: true
     ignorePropertyDeclaration: true
     ignoreCompanionObjectPropertyDeclaration: true
     ignoreNamedArgument: true
+    ignoreHashCodeFunction: true
     ignoreEnums: true
+    ignoreAnnotation: true
+
   WildcardImport:
     active: true
+
   MaxLineLength:
+    active: true
     maxLineLength: 120
-  FunctionNaming:
-    ignoreAnnotated:
-      - Composable
-  LongParameterList:
-    constructorThreshold: 10
 
+  ReturnCount:
+    active: true
+    max: 3
 
+  ThrowsCount:
+    active: true
+    max: 2
+
+  NewLineAtEndOfFile:
+    active: true
+
+comments:
+  active: true
