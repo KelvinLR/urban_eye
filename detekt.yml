@@ -26,3 +26,13 @@ style:
     active: true
   MaxLineLength:
     maxLineLength: 120
+
+FunctionNaming:
+  ignoreAnnotated:
+    - Composable
+
+MagicNumber:
+  ignorePropertyDeclaration: true
+
+LongParameterList:
+  constructorThreshold: 10
