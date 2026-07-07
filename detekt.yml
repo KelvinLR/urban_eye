@@ -21,18 +21,19 @@ naming:
 
 style:
   MagicNumber:
-    active: false
+    active: true
+    ignorePropertyDeclaration: true
+    ignoreCompanionObjectPropertyDeclaration: true
+    ignoreNamedArgument: true
+    ignoreEnums: true
   WildcardImport:
     active: true
   MaxLineLength:
     maxLineLength: 120
+  FunctionNaming:
+    ignoreAnnotated:
+      - Composable
+  LongParameterList:
+    constructorThreshold: 10
 
-FunctionNaming:
-  ignoreAnnotated:
-    - Composable
 
-MagicNumber:
-  ignorePropertyDeclaration: true
-
-LongParameterList:
-  constructorThreshold: 10
