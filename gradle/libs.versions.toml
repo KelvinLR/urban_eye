@@ -1,5 +1,5 @@
 [versions]
-agp = "9.0.0"
+agp = "8.13.2"
 kotlin = "2.0.21"
 ksp = "2.0.21-1.0.27"
 coreKtx = "1.18.0"
@@ -8,8 +8,8 @@ activityCompose = "1.13.0"
 composeBom = "2026.06.01"
 
 # Hilt
-hilt = "2.60"
-hiltNavigationCompose = "1.4.0"
+hilt = "2.51.1"
+hiltNavigationCompose = "1.2.0"
 
 # Navigation
 navigationCompose = "2.9.8"
