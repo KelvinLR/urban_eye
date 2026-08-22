@@ -8,16 +8,7 @@ import javax.inject.Inject
 class GetNearbyPlacesUseCase @Inject constructor(
     private val repository: PlacesRepository
 ) {
-    suspend operator fun invoke(
-        latitude: Double,
-        longitude: Double,
-        radius: Int = 1000
-    ): Result<List<Place>> {
-
-        if (radius <= 0) {
-            return Result.Error(IllegalArgumentException("O raio de busca deve ser maior que zero"))
-        }
-
+    suspend operator fun invoke(latitude: Double, longitude: Double, radius: Int): Result<List<Place>> {
         return repository.getNearbyPlaces(latitude, longitude, radius)
     }
 }

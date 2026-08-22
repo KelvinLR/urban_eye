@@ -37,7 +37,6 @@ class GetNearbyPlacesUseCaseTest {
 
     @Test
     fun `deve retornar lista de lugares quando a busca for bem sucedida`() = runTest {
-        // GIVEN: o repositório vai retornar uma lista fake
         val fakePlaces = listOf(
             Place(
                 id = "1",
@@ -55,10 +54,8 @@ class GetNearbyPlacesUseCaseTest {
         )
         coEvery { repository.getNearbyPlaces(any(), any(), any()) } returns Result.Success(fakePlaces)
 
-        // WHEN: executo o use case
         val result = useCase(latitude = -23.5, longitude = -46.6, radius = 1000)
 
-        // THEN: deve retornar Success com a lista
         assertTrue(result is Result.Success)
         assertEquals(1, (result as Result.Success).data.size)
         assertEquals("Café Central", result.data[0].name)

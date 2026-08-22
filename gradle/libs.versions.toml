@@ -8,7 +8,7 @@ coreKtx = "1.18.0"
 lifecycleRuntimeKtx = "2.10.0"
 activityCompose = "1.13.0"
 
-composeBom = "2025.09.00"
+composeBom = "2025.05.01"
 
 # Hilt
 hilt = "2.57.1"
