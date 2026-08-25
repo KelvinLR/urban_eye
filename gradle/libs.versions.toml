@@ -40,6 +40,7 @@ turbine = "1.2.1"
 
 # Static Analysis
 detekt = "1.23.8"
+composeMaterialCore = "1.6.2"
 
 [libraries]
 # AndroidX Core
@@ -108,6 +109,7 @@ androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-co
 
 # Testing - Hilt
 hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
+androidx-compose-material-core = { group = "androidx.wear.compose", name = "compose-material-core", version.ref = "composeMaterialCore" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
