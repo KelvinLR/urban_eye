@@ -94,9 +94,7 @@ fun PlaceListView() {
         verticalArrangement = Arrangement.spacedBy(24.dp),
     ) {
         items(3) {
-            PlaceCard(
-                path = "Oi"
-            )
+            PlaceCard()
         }
     }
 }
