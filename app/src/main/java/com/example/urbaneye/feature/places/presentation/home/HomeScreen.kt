@@ -25,9 +25,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.urbaneye.feature.places.presentation.components.PlaceCard
 
-
-@OptIn(ExperimentalMaterial3Api::class)
-
 @Composable
 fun HomeScreen() {
     Column(
@@ -36,52 +33,71 @@ fun HomeScreen() {
                 .background(color = Color(0xFFFFFFFF))
                 .padding(16.dp)
     ) {
-        TopAppBar(
-            colors = TopAppBarDefaults.topAppBarColors(
-                containerColor = Color(0xFFFFFFFF),
-                titleContentColor = Color(0xFF0D631B),
-            ),
-            title = {
-                Text(
-                    text = "UrbanEye",
-                    fontSize = 22.sp,
-                    fontWeight = FontWeight(800)
-                )
-            }
-        )
+        AppBar()
+        Greetings()
+        SearchField()
+        PlaceListView()
+    }
+}
 
-        Text(text = "Bem-vindo!", fontSize = 22.sp, fontWeight = FontWeight(500))
-        Text("Para onde vamos hoje?")
-
-        SearchBar (
-            query = "",
-            onQueryChange = { },
-            onSearch = { },
-            leadingIcon = {
-                Icon(
-                    imageVector = Icons.Filled.Search,
-                    contentDescription = "Search"
-                )
-            },
-            active = false,
-            onActiveChange = { },
-            placeholder = { Text("Onde vamos hoje?") }
-        ) {
-            Modifier.size(
-                width = 358.dp,
-                height = 192f.dp,
-            ).background(Color(0xFFBFCABA))
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun AppBar() {
+    TopAppBar(
+        colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = Color(0xFFFFFFFF),
+            titleContentColor = Color(0xFF0D631B),
+        ),
+        title = {
+            Text(
+                text = "UrbanEye",
+                fontSize = 22.sp,
+                fontWeight = FontWeight(800)
+            )
         }
+    )
+}
 
-        LazyColumn(
-            verticalArrangement = Arrangement.spacedBy(24.dp),
-        ) {
-            items(3) {
-                PlaceCard(
-                    path = "Oi"
-                )
-            }
+@Composable
+fun Greetings() {
+    Text(text = "Bem-vindo!", fontSize = 22.sp, fontWeight = FontWeight(500))
+    Text("Para onde vamos hoje?")
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun SearchField() {
+    SearchBar (
+        query = "",
+        onQueryChange = { },
+        onSearch = { },
+        leadingIcon = {
+            Icon(
+                imageVector = Icons.Filled.Search,
+                contentDescription = "Search"
+            )
+        },
+        active = false,
+        onActiveChange = { },
+        placeholder = { Text("Onde vamos hoje?") }
+    ) {
+        Modifier.size(
+            width = 358.dp,
+            height = 192f.dp,
+        ).background(Color(0xFFBFCABA))
+    }
+}
+
+@Composable
+fun PlaceListView() {
+    LazyColumn(
+        verticalArrangement = Arrangement.spacedBy(24.dp),
+    ) {
+        items(3) {
+            PlaceCard(
+                path = "Oi"
+            )
         }
     }
-
 }
+
