@@ -1,9 +1,7 @@
 package com.example.urbaneye.feature.places.presentation.home
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.SearchBar
 import androidx.compose.material3.Text
@@ -17,13 +15,16 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
-import androidx.compose.material3.TopAppBarColors
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.urbaneye.feature.places.presentation.components.PlaceCard
+import com.example.urbaneye.core.designsystem.component.PlaceCard
+import com.example.urbaneye.core.designsystem.component.PlaceGenreSelector
+import androidx.compose.runtime.*
+import com.example.urbaneye.core.designsystem.component.UrbanEyeSearchBar
+import com.example.urbaneye.core.designsystem.component.UrbanEyeTopAppBar
 
 @Composable
 fun HomeScreen() {
@@ -33,59 +34,17 @@ fun HomeScreen() {
                 .background(color = Color(0xFFFFFFFF))
                 .padding(16.dp)
     ) {
-        AppBar()
+        UrbanEyeTopAppBar()
         Greetings()
-        SearchField()
+        UrbanEyeSearchBar()
         PlaceListView()
     }
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun AppBar() {
-    TopAppBar(
-        colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = Color(0xFFFFFFFF),
-            titleContentColor = Color(0xFF0D631B),
-        ),
-        title = {
-            Text(
-                text = "UrbanEye",
-                fontSize = 22.sp,
-                fontWeight = FontWeight(800)
-            )
-        }
-    )
 }
 
 @Composable
 fun Greetings() {
     Text(text = "Bem-vindo!", fontSize = 22.sp, fontWeight = FontWeight(500))
     Text("Para onde vamos hoje?")
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun SearchField() {
-    SearchBar (
-        query = "",
-        onQueryChange = { },
-        onSearch = { },
-        leadingIcon = {
-            Icon(
-                imageVector = Icons.Filled.Search,
-                contentDescription = "Search"
-            )
-        },
-        active = false,
-        onActiveChange = { },
-        placeholder = { Text("Onde vamos hoje?") }
-    ) {
-        Modifier.size(
-            width = 358.dp,
-            height = 192f.dp,
-        ).background(Color(0xFFBFCABA))
-    }
 }
 
 @Composable
