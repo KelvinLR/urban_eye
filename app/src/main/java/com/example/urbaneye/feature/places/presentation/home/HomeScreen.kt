@@ -43,7 +43,7 @@ fun HomeScreen() {
                 .fillMaxSize()
                 .background(color = Color(0xFFFFFFFF))
                 .padding(paddingValues)
-                .padding(16.dp)
+                .padding(end = 16.dp, start = 16.dp)
         ) {
             Greetings()
             UrbanEyeSearchBar()
@@ -55,18 +55,24 @@ fun HomeScreen() {
 
 @Composable
 fun Greetings() {
-    Text(text = "Bem-vindo!", fontSize = 22.sp, fontWeight = FontWeight(600))
-    Text("Para onde vamos hoje?")
+    Text(text = "Bem-vindo!", fontSize = 28.sp, fontWeight = FontWeight(700))
+    Text("Para onde vamos hoje?", fontSize = 16.sp, fontWeight = FontWeight(300))
 }
 
 @Composable
 fun PlaceListView() {
-    LazyColumn(
-        verticalArrangement = Arrangement.spacedBy(24.dp),
+    Column(
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        items(3) {
-            PlaceCard()
+        Text(text = "Recomendados", fontSize = 22.sp, fontWeight = FontWeight(700))
+        LazyColumn(
+            verticalArrangement = Arrangement.spacedBy(24.dp),
+        ) {
+            items(3) {
+                PlaceCard()
+            }
         }
     }
+
 }
 
