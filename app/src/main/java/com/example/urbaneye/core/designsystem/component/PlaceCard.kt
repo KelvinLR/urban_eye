@@ -77,9 +77,10 @@ fun PlaceCard() {
                     Text(
                         text = "Genre",
                         color = Color(0xFF0D631B),
+                        fontWeight = FontWeight(400),
                         modifier = Modifier
                             .background(
-                                color = Color(0xFF88D982),
+                                color = Color(0xFF88D982).copy(alpha = 0.5f),
                                 shape = RoundedCornerShape(4.dp)
                             )
                             .padding(vertical = 4.dp, horizontal = 8.dp)
