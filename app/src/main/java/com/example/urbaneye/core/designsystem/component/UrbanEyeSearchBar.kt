@@ -1,6 +1,7 @@
 package com.example.urbaneye.core.designsystem.component
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
@@ -17,6 +18,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun UrbanEyeSearchBar() {
     SearchBar (
+        windowInsets = WindowInsets(0.dp),
         query = "",
         onQueryChange = { },
         onSearch = { },
@@ -30,9 +32,5 @@ fun UrbanEyeSearchBar() {
         onActiveChange = { },
         placeholder = { Text("Onde vamos hoje?") }
     ) {
-        Modifier.size(
-            width = 358.dp,
-            height = 192f.dp,
-        ).background(Color(0xFFBFCABA))
     }
 }
