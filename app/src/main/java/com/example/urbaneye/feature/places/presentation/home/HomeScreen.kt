@@ -35,7 +35,7 @@ val LABELS = listOf("Alimentação", "Museus", "Cultura", "Natureza")
 @Composable
 fun HomeScreen() {
     Scaffold(
-        topBar = { UrbanEyeTopAppBar() }
+        topBar = { UrbanEyeTopAppBar() },
     ) {
         paddingValues ->
         Column(
@@ -56,7 +56,7 @@ fun HomeScreen() {
 @Composable
 fun Greetings() {
     Text(text = "Bem-vindo!", fontSize = 28.sp, fontWeight = FontWeight(700))
-    Text("Para onde vamos hoje?", fontSize = 16.sp, fontWeight = FontWeight(300))
+    Text("Para onde vamos hoje?", fontSize = 16.sp, fontWeight = FontWeight(300), color = Color(0xFF40493D))
 }
 
 @Composable
