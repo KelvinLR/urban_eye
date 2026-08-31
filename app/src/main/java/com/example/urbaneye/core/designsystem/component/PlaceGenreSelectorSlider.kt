@@ -14,7 +14,7 @@ fun PlaceGenreSelectorSlider(labels: List<String>) {
     var selectedIndex by remember { mutableStateOf(labels.firstOrNull() ?: "") }
 
     LazyRow(
-        modifier = Modifier.padding(vertical = 24.dp),
+        modifier = Modifier.padding(vertical = 12.dp),
         horizontalArrangement = Arrangement.spacedBy(12.5.dp)
     ) {
         items(labels) { label ->
