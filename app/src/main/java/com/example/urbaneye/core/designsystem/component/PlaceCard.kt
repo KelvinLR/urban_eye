@@ -24,6 +24,7 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
+
 @Composable
 fun PlaceCard() {
     val configuration = LocalConfiguration.current
@@ -43,56 +44,73 @@ fun PlaceCard() {
         Column(
             verticalArrangement = Arrangement.SpaceBetween
         ) {
-            Box(
+            PlaceImage()
+            Details()
+
+        }
+    }
+}
+
+@Composable
+fun PlaceImage() {
+    val configuration = LocalConfiguration.current
+    val screenWidth = configuration.screenWidthDp
+    val screenHeight = configuration.screenHeightDp
+
+    Box(
+        modifier = Modifier
+            .size(
+                width = ((358f / 390f) * screenWidth).dp,
+                height = ((192f / 844f) * screenHeight).dp,
+            )
+            .background(Color(0xFFBFCABA)),
+        contentAlignment = Alignment.Center
+    ) {
+        Icon(
+            imageVector = Icons.Filled.Place,
+            contentDescription = "Place"
+        )
+    }
+}
+
+@Composable
+fun Details() {
+    val configuration = LocalConfiguration.current
+    val screenWidth = configuration.screenWidthDp
+    val screenHeight = configuration.screenHeightDp
+
+    Column(
+        Modifier.padding(
+            start = ((16f / 390f) * screenWidth).dp,
+            end = ((16f / 390f) * screenWidth).dp,
+            top = ((16f / 844f) * screenHeight).dp,
+        ),
+        verticalArrangement = Arrangement.SpaceBetween,
+
+        ) {
+        Text(text = "Title", color = Color(0xFF1C1B1F), fontWeight = FontWeight(500))
+        Text(text = "Address", color = Color(0xFF40493D), fontWeight = FontWeight(300))
+        Row(
+            Modifier
+                .fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                text = "Genre",
+                color = Color(0xFF0D631B),
+                fontWeight = FontWeight(400),
                 modifier = Modifier
-                    .size(
-                        width = ((358f / 390f) * screenWidth).dp,
-                        height = ((192f / 844f) * screenHeight).dp,
+                    .background(
+                        color = Color(0xFF88D982).copy(alpha = 0.5f),
+                        shape = RoundedCornerShape(4.dp)
                     )
-                    .background(Color(0xFFBFCABA)),
-                contentAlignment = Alignment.Center
-            ) {
-                Icon(
-                    imageVector = Icons.Filled.Place,
-                    contentDescription = "Place"
-                )
+                    .padding(vertical = 4.dp, horizontal = 8.dp)
+
+            )
+            TextButton(onClick = { }) {
+                Text(text = "Detalhes", color = Color(0xFF0D631B))
             }
-            Column(
-                Modifier.padding(
-                    start = ((16f / 390f) * screenWidth).dp,
-                    end = ((16f / 390f) * screenWidth).dp,
-                    top = ((16f / 844f) * screenHeight).dp,
-                ),
-                verticalArrangement = Arrangement.SpaceBetween,
-
-            ) {
-                Text(text = "Title", color = Color(0xFF1C1B1F), fontWeight = FontWeight(500))
-                Text(text = "Address", color = Color(0xFF40493D), fontWeight = FontWeight(300))
-                Row(
-                    Modifier
-                        .fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    Text(
-                        text = "Genre",
-                        color = Color(0xFF0D631B),
-                        fontWeight = FontWeight(400),
-                        modifier = Modifier
-                            .background(
-                                color = Color(0xFF88D982).copy(alpha = 0.5f),
-                                shape = RoundedCornerShape(4.dp)
-                            )
-                            .padding(vertical = 4.dp, horizontal = 8.dp)
-
-                    )
-                    TextButton(onClick = { }) {
-                        Text(text = "Detalhes", color = Color(0xFF0D631B))
-                    }
-                }
-
-            }
-
         }
     }
 }
