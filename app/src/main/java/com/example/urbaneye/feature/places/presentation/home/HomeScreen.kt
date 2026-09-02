@@ -27,6 +27,7 @@ import com.example.urbaneye.core.designsystem.component.PlaceCard
 import com.example.urbaneye.core.designsystem.component.PlaceGenreSelector
 import androidx.compose.runtime.*
 import com.example.urbaneye.core.designsystem.component.PlaceGenreSelectorSlider
+import com.example.urbaneye.core.designsystem.component.UrbanEyeBottomAppBar
 import com.example.urbaneye.core.designsystem.component.UrbanEyeSearchBar
 import com.example.urbaneye.core.designsystem.component.UrbanEyeTopAppBar
 
@@ -36,6 +37,7 @@ val LABELS = listOf("Alimentação", "Museus", "Cultura", "Natureza")
 fun HomeScreen() {
     Scaffold(
         topBar = { UrbanEyeTopAppBar() },
+        bottomBar = { UrbanEyeBottomAppBar() }
     ) {
         paddingValues ->
         Column(
