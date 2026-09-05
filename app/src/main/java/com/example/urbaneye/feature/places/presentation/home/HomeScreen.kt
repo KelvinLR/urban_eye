@@ -15,7 +15,9 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBarDefaults
@@ -37,7 +39,17 @@ val LABELS = listOf("Alimentação", "Museus", "Cultura", "Natureza")
 fun HomeScreen() {
     Scaffold(
         topBar = { UrbanEyeTopAppBar() },
-        bottomBar = { UrbanEyeBottomAppBar() }
+        bottomBar = { UrbanEyeBottomAppBar() },
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = {},
+                contentColor = Color(0xFFFFFFFF),
+                containerColor = Color(0xFF0D631B)
+            ) {
+                Icon(Icons.Filled.Add, contentDescription = "Add")
+            }
+        }
+
     ) {
         paddingValues ->
         Column(
