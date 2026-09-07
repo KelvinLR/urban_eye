@@ -14,7 +14,8 @@ data class PlaceDto(
     val formattedAddress: String? = null,
     val primaryType: String? = null,
     val rating: Double? = null,
-    val location: LocationDto? = null
+    val location: LocationDto? = null,
+    val editorialSummary: EditorialSummaryDto? = null
 )
 
 @Serializable
@@ -26,4 +27,9 @@ data class DisplayNameDto(
 data class LocationDto(
     val latitude: Double? = null,
     val longitude: Double? = null
+)
+
+@Serializable
+data class EditorialSummaryDto(
+    val text: String? = null
 )
